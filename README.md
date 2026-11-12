@@ -1,4 +1,4 @@
-# 游戏破解状态查询（miyu-scripts-crack-search）
+# 游戏破解状态查询（crack-search）
 
 给 Miyu 的脚本工具 `crack_search`：查一款 PC 游戏有没有被破解。
 

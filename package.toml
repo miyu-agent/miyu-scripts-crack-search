@@ -1,5 +1,5 @@
 [package]
-version = "0.1.1"
+version = "0.1.2"
 name = { en = "Game crack status", zh = "游戏破解状态查询" }
 summary = { en = "Whether a PC game is cracked: status, DRM, dates and group", zh = "查 PC 游戏有没有被破解：状态、DRM、日期、发布组" }
 author = "SHORiN-KiWATA"
