@@ -131,7 +131,9 @@ def detail(url):
 # ---------------------------------------------------------------- isitcracked.com
 
 def isitcracked(query, limit):
-    pattern = urllib.parse.quote(f"*{query}*")
+    # PostgREST 的 or=(…) 里 , ( ) 是语法符号：值用双引号包起来，里面的 \ 和 " 转义
+    escaped = query.replace("\\", "\\\\").replace('"', '\\"')
+    pattern = urllib.parse.quote(f'"*{escaped}*"')
     url = (f"{SUPABASE_URL}/rest/v1/games?select=title,slug,status,crack_date,release_date,drm_protection,scene_group,"
            f"secondary_protections&or=(title.ilike.{pattern},scene_group.ilike.{pattern})&order=title&limit={limit}")
     rows = json.loads(get(url, {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}))
